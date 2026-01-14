@@ -5,6 +5,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ProjectDetailClient from "./ProjectDetailClient";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const projects = getAllProjects();
   return projects.map((project) => ({
