@@ -58,21 +58,13 @@ export default function Navigation() {
           ))}
         </div>
 
-        {/* CTA Buttons */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="mailto:withstudiogroup@gmail.com"
-            className="btn-secondary text-sm"
-          >
-            문의하기
-          </a>
-          <a
-            href="#projects"
-            className="btn-primary text-sm"
-          >
-            프로젝트 보기
-          </a>
-        </div>
+        {/* CTA Button */}
+        <a
+          href="mailto:withstudiogroup@gmail.com"
+          className="hidden md:block btn-secondary text-sm"
+        >
+          문의하기
+        </a>
 
         {/* Mobile Menu Button */}
         <button
@@ -105,6 +97,20 @@ export default function Navigation() {
         </button>
       </nav>
 
+      {/* Mobile Menu Backdrop */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
@@ -113,7 +119,7 @@ export default function Navigation() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden glass border-t border-[var(--border-subtle)]"
+            className="md:hidden glass border-t border-[var(--border-subtle)] relative z-50"
           >
             <div className="container py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -126,11 +132,6 @@ export default function Navigation() {
                   {link.label}
                 </a>
               ))}
-              <div className="mt-4 pt-4 border-t border-[var(--border-subtle)] flex flex-col gap-2">
-                <a href="#projects" className="btn-primary justify-center">
-                  프로젝트 보기
-                </a>
-              </div>
             </div>
           </motion.div>
         )}
