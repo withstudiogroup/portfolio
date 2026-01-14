@@ -42,7 +42,7 @@ export default function Navigation() {
           <div className="w-7 h-7 bg-white rounded-md flex items-center justify-center">
             <span className="text-black font-semibold text-sm">W</span>
           </div>
-          <span className="font-medium text-sm hidden sm:block">WithStudio</span>
+          <span className="font-medium text-sm hidden sm:block">Studio With</span>
         </Link>
 
         {/* Desktop Navigation */}

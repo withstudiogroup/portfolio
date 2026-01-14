@@ -15,12 +15,12 @@ export default function Footer() {
             <div className="w-6 h-6 bg-white rounded-md flex items-center justify-center">
               <span className="text-black font-semibold text-xs">W</span>
             </div>
-            <span className="text-sm font-medium">WithStudio</span>
+            <span className="text-sm font-medium">Studio With</span>
           </Link>
 
           {/* Copyright */}
           <p className="text-[var(--text-muted)] text-sm">
-            © {currentYear} WithStudio. All rights reserved.
+            © {currentYear} Studio With. All rights reserved.
           </p>
 
           {/* Links */}
