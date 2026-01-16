@@ -27,170 +27,144 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "1",
-    slug: "hotel-reservation",
-    title: "호텔 예약 사이트",
+    slug: "nolreport",
+    title: "비즈니스 분석 대시보드",
     description:
-      "실시간 객실 조회부터 결제까지, 완전한 호텔 예약 시스템을 처음부터 구축했습니다.",
-    thumbnail: "/images/projects/hotel/thumbnail.jpg",
-    images: [
-      "/images/projects/hotel/feature-1.jpg",
-      "/images/projects/hotel/feature-2.jpg",
-    ],
-    tags: ["예약 시스템", "결제 연동"],
-    techStack: ["Next.js", "TypeScript", "PostgreSQL", "Stripe", "Redis"],
+      "상권 분석, 가격 비교, 일정/성과 관리를 한 곳에서. 1년 이상 심혈을 기울여 만든 실서비스입니다.",
+    thumbnail: "/images/projects/nolreport/thumbnail.jpg",
+    images: [],
+    tags: ["데이터 분석", "자동화", "실서비스"],
+    techStack: ["React", "Node.js", "Python", "PostgreSQL", "Redis"],
+    liveUrl: "https://nolreport.net",
     featured: true,
     order: 1,
     overview:
-      "호텔 운영자와 고객 모두를 위한 예약 플랫폼입니다. 실시간 객실 가용성 확인, 다양한 결제 수단 지원, 예약 관리 대시보드까지 전체 시스템을 설계하고 구현했습니다.",
+      "실제 비즈니스 운영에 필요한 모든 데이터를 한 곳에서 볼 수 있는 통합 대시보드입니다. 상권 분석 리포트, 경쟁사 자동 크롤링을 통한 가격 비교, 일정 관리, 성과 관리 기능을 제공합니다. 1년 이상의 개발 기간과 지속적인 개선을 거쳐 현재 실서비스로 운영 중입니다.",
     role: "풀스택 개발",
-    duration: "3개월",
+    duration: "1년+",
     features: [
       {
-        title: "실시간 객실 조회",
+        title: "상권 분석 리포트",
         description:
-          "Redis 캐싱을 활용한 실시간 객실 가용성 확인 및 동시 예약 충돌 방지",
+          "지역별 상권 데이터를 수집하고 분석하여 인사이트를 제공하는 자동 리포트 시스템",
       },
       {
-        title: "결제 시스템 통합",
+        title: "자동 크롤링 가격 비교",
         description:
-          "카드 결제, 계좌이체 등 다양한 결제 수단 연동 및 안전한 결제 프로세스",
+          "경쟁사 가격을 자동으로 수집하여 실시간 비교 분석, 가격 변동 알림 제공",
       },
       {
-        title: "관리자 대시보드",
+        title: "일정 및 성과 관리",
         description:
-          "예약 현황, 매출 통계, 고객 관리를 위한 직관적인 관리 도구",
+          "업무 일정 관리와 KPI 기반 성과 추적을 통한 효율적인 비즈니스 운영 지원",
       },
     ],
     results: [
-      "예약 완료율 40% 향상",
-      "관리 업무 시간 60% 단축",
-      "모바일 예약 비중 70% 달성",
+      "실서비스 운영 중",
+      "데이터 기반 의사결정 지원",
+      "반복 업무 자동화로 시간 절감",
     ],
   },
   {
     id: "2",
-    slug: "photo-studio",
-    title: "사진 스튜디오 홈페이지",
+    slug: "hotel-reservation",
+    title: "럭셔리 호텔 예약 사이트",
     description:
-      "포트폴리오 갤러리와 예약 기능을 갖춘 프리미엄 사진 스튜디오 웹사이트입니다.",
-    thumbnail: "/images/projects/studio/thumbnail.jpg",
-    images: [
-      "/images/projects/studio/feature-1.jpg",
-      "/images/projects/studio/feature-2.jpg",
-    ],
-    tags: ["포트폴리오", "예약 시스템"],
-    techStack: ["React", "Tailwind CSS", "Framer Motion", "Sanity CMS"],
+      "파라다이스시티를 레퍼런스로 한 프리미엄 호텔 예약 시스템. 실시간 객실 조회부터 결제까지.",
+    thumbnail: "/images/projects/hotel/thumbnail.jpg",
+    images: [],
+    tags: ["예약 시스템", "결제 연동"],
+    techStack: ["Next.js", "TypeScript", "Zustand", "Framer Motion", "Tailwind CSS"],
     featured: true,
     order: 2,
     overview:
-      "사진작가의 작품을 효과적으로 보여주면서 촬영 예약까지 이어지는 웹사이트입니다. 고해상도 이미지 최적화와 부드러운 애니메이션으로 프리미엄 느낌을 살렸습니다.",
-    role: "프론트엔드 개발",
-    duration: "2개월",
+      "파라다이스시티(p-city.com)를 레퍼런스로 한 고급 호텔 예약 웹사이트입니다. 세련된 UI/UX와 직관적인 예약 시스템을 통해 사용자에게 프리미엄 경험을 제공합니다. 객실 목록, 다이닝, 부대시설, 특별 오퍼 등 호텔 운영에 필요한 전체 기능을 구현했습니다.",
+    role: "풀스택 개발",
+    duration: "3개월",
     features: [
       {
-        title: "고성능 갤러리",
+        title: "실시간 객실 조회 및 예약",
         description:
-          "이미지 지연 로딩과 최적화로 빠른 로딩 속도와 부드러운 UX 제공",
+          "날짜별 객실 가용성 확인과 동시 예약 충돌 방지를 위한 실시간 시스템",
       },
       {
-        title: "촬영 예약 시스템",
+        title: "프리미엄 UI/UX",
         description:
-          "날짜/시간 선택, 촬영 유형 선택, 자동 확인 메일 발송까지 원스톱 예약",
+          "Framer Motion 애니메이션과 세련된 디자인으로 럭셔리 브랜드 경험 제공",
       },
       {
-        title: "CMS 연동",
+        title: "통합 콘텐츠 관리",
         description:
-          "비개발자도 쉽게 작품을 업로드하고 관리할 수 있는 콘텐츠 관리 시스템",
+          "객실, 다이닝, 시설, 이벤트 등 호텔 콘텐츠 통합 관리 시스템",
       },
-    ],
-    results: [
-      "페이지 로드 시간 2초 이내",
-      "문의 전환율 25% 증가",
-      "모바일 이탈률 35% 감소",
     ],
   },
   {
     id: "3",
-    slug: "business-dashboard",
-    title: "비즈니스 분석 대시보드",
+    slug: "luxury-resort",
+    title: "럭셔리 리조트 홈페이지",
     description:
-      "여러 데이터 소스를 통합하여 핵심 지표를 실시간으로 모니터링하는 대시보드입니다.",
-    thumbnail: "/images/projects/dashboard/thumbnail.jpg",
-    images: [
-      "/images/projects/dashboard/feature-1.jpg",
-      "/images/projects/dashboard/feature-2.jpg",
-    ],
-    tags: ["데이터 시각화", "자동화"],
-    techStack: ["React", "Python", "PostgreSQL", "D3.js", "Airflow"],
+      "Velaa Private Island를 참고한 감성적인 리조트 홈페이지. 풀스크린 비주얼과 우아한 인터랙션.",
+    thumbnail: "/images/projects/resort/thumbnail.jpg",
+    images: [],
+    tags: ["브랜딩", "애니메이션"],
+    techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
     featured: true,
     order: 3,
     overview:
-      "흩어진 데이터를 한 곳에서 볼 수 있는 통합 대시보드입니다. 매출, 사용자 행동, 마케팅 성과 등을 실시간으로 모니터링하고 자동 리포트를 생성합니다.",
-    role: "데이터 + 프론트엔드",
-    duration: "4개월",
+      "Velaa Private Island 웹사이트를 참고한 럭셔리 리조트 홈페이지입니다. 풀스크린 히어로 섹션, 감성적인 타이포그래피, 고품질 이미지 중심 디자인, 부드러운 스크롤 애니메이션으로 미니멀하고 우아한 경험을 제공합니다.",
+    role: "프론트엔드 개발",
+    duration: "2개월",
     features: [
       {
-        title: "데이터 파이프라인",
+        title: "풀스크린 히어로 슬라이드쇼",
         description:
-          "여러 소스(DB, API, 스프레드시트)의 데이터를 자동으로 수집하고 정제",
+          "감성적인 카피와 함께하는 풀스크린 이미지 슬라이드쇼로 강렬한 첫인상",
       },
       {
-        title: "실시간 시각화",
+        title: "부드러운 스크롤 애니메이션",
         description:
-          "D3.js 기반의 인터랙티브 차트로 복잡한 데이터를 직관적으로 표현",
+          "섹션별 자연스러운 페이드인/아웃과 패럴랙스 효과로 몰입감 제공",
       },
       {
-        title: "자동 리포트",
+        title: "반응형 프리미엄 디자인",
         description:
-          "일간/주간 리포트를 자동 생성하여 이메일로 발송하는 자동화 시스템",
+          "모바일부터 데스크톱까지 일관된 럭셔리 브랜드 경험 유지",
       },
-    ],
-    results: [
-      "리포트 작성 시간 주 8시간 → 0시간",
-      "데이터 조회 시간 5분 → 실시간",
-      "의사결정 속도 50% 향상",
     ],
   },
   {
     id: "4",
-    slug: "competitor-crawler",
-    title: "경쟁사 자동 크롤링 시스템",
+    slug: "tech-store",
+    title: "프리미엄 전자제품 스토어",
     description:
-      "경쟁사 가격과 상품 정보를 자동으로 수집하여 비교 분석하는 시스템입니다.",
-    thumbnail: "/images/projects/crawler/thumbnail.jpg",
-    images: [
-      "/images/projects/crawler/feature-1.jpg",
-      "/images/projects/crawler/feature-2.jpg",
-    ],
-    tags: ["데이터 수집", "자동화"],
-    techStack: ["Python", "Selenium", "PostgreSQL", "FastAPI", "Docker"],
+      "Apple Korea를 레퍼런스로 한 전자제품 판매 사이트. 제품 중심의 깔끔한 레이아웃.",
+    thumbnail: "/images/projects/techstore/thumbnail.jpg",
+    images: [],
+    tags: ["이커머스", "제품 쇼케이스"],
+    techStack: ["Next.js", "TypeScript", "Zustand", "Framer Motion", "Tailwind CSS"],
     featured: true,
     order: 4,
     overview:
-      "수작업으로 경쟁사 정보를 확인하던 업무를 자동화했습니다. 매일 자동으로 데이터를 수집하고, 가격 변동 시 알림을 보내며, 히스토리 분석도 가능합니다.",
-    role: "백엔드 + 데이터",
-    duration: "3개월",
+      "Apple Korea Mac 페이지를 레퍼런스로 한 프리미엄 전자제품 온라인 스토어입니다. 제품을 돋보이게 하는 깔끔한 레이아웃, 상세한 스펙 비교, 부드러운 애니메이션으로 프리미엄 쇼핑 경험을 제공합니다.",
+    role: "프론트엔드 개발",
+    duration: "2개월",
     features: [
       {
-        title: "지능형 크롤러",
+        title: "제품 중심 레이아웃",
         description:
-          "사이트 구조 변경에 대응하는 안정적인 크롤링 및 우회 로직 구현",
+          "넓은 여백과 고해상도 이미지로 제품을 돋보이게 하는 Apple 스타일 디자인",
       },
       {
-        title: "가격 변동 알림",
+        title: "상세 스펙 비교",
         description:
-          "경쟁사 가격 변동 감지 시 실시간 알림 발송 (이메일, 슬랙)",
+          "여러 제품의 사양을 나란히 비교할 수 있는 인터랙티브 비교 기능",
       },
       {
-        title: "트렌드 분석",
+        title: "부드러운 인터랙션",
         description:
-          "수집된 히스토리 데이터를 기반으로 가격 추이 및 패턴 분석",
+          "스크롤 기반 애니메이션과 호버 효과로 생동감 있는 UX 제공",
       },
-    ],
-    results: [
-      "수작업 모니터링 시간 100% 절감",
-      "가격 대응 속도 24시간 → 1시간 이내",
-      "경쟁력 있는 가격 유지로 매출 15% 증가",
     ],
   },
 ];
