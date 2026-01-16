@@ -58,20 +58,20 @@ export default function Team() {
             <h3 className="text-xl font-medium text-[var(--text-primary)] mb-6">
               경력 역량
             </h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-4">
               {experiences.map((exp, index) => (
                 <motion.div
                   key={exp.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="p-4 bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-xl hover:border-[var(--border-hover)] transition-colors"
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-5 bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-xl hover:border-[var(--border-hover)] transition-colors"
                 >
-                  <h4 className="font-medium text-[var(--text-primary)] mb-1 text-sm">
+                  <h4 className="font-medium text-[var(--text-primary)] mb-1">
                     {exp.title}
                   </h4>
-                  <p className="text-xs text-[var(--text-secondary)]">
+                  <p className="text-sm text-[var(--text-secondary)]">
                     {exp.description}
                   </p>
                 </motion.div>

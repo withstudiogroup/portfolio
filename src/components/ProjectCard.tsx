@@ -70,7 +70,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           <h3 className="text-xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-white transition-colors">
             {project.title}
           </h3>
-          <p className="text-[var(--text-secondary)] text-sm leading-relaxed line-clamp-2">
+          <p className="text-[var(--text-secondary)] text-sm leading-relaxed line-clamp-2 min-h-[2.5rem]">
             {project.description}
           </p>
         </div>
