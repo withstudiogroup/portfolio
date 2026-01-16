@@ -45,6 +45,23 @@ export default function Team() {
                 바뀌는 일 없이 직접 대응합니다.
               </p>
             </div>
+
+            {/* Tech Stack */}
+            <div className="mt-8">
+              <h3 className="text-sm font-medium text-[var(--text-tertiary)] mb-4">
+                Tech Stack
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["React", "Next.js", "TypeScript", "Node.js", "Python", "PostgreSQL", "Tailwind CSS", "AWS"].map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1.5 text-sm bg-[var(--bg-subtle)] border border-[var(--border-subtle)] rounded-lg text-[var(--text-secondary)]"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
           {/* Right - Experience */}
