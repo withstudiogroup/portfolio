@@ -24,15 +24,15 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     >
       <Link
         href={`/projects/${project.slug}`}
-        className="group card block p-6 h-full flex flex-col"
+        className="group card block p-8 h-full flex flex-col"
         aria-label={`${project.title} 프로젝트 상세보기`}
       >
         {/* Header */}
-        <div className="flex items-start justify-between mb-4">
+        <div className="flex items-start justify-between mb-6">
           <div className="flex items-center gap-3">
             {/* Icon */}
-            <div className="w-10 h-10 rounded-lg bg-[var(--bg-subtle)] border border-[var(--border-subtle)] flex items-center justify-center">
-              <span className="text-[var(--text-secondary)] font-mono text-sm">
+            <div className="w-12 h-12 rounded-xl bg-[var(--bg-subtle)] border border-[var(--border-subtle)] flex items-center justify-center">
+              <span className="text-[var(--text-secondary)] font-mono text-base">
                 {String(index + 1).padStart(2, "0")}
               </span>
             </div>
@@ -47,11 +47,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
           {/* Arrow */}
           <div
-            className="w-8 h-8 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity"
+            className="w-10 h-10 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity"
             aria-hidden="true"
           >
             <svg
-              className="w-4 h-4 text-[var(--text-secondary)]"
+              className="w-5 h-5 text-[var(--text-secondary)]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -67,21 +67,21 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         {/* Content */}
-        <div className="flex-1 mb-4">
-          <h3 className="text-xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-white transition-colors">
+        <div className="flex-1 mb-6">
+          <h3 className="text-2xl font-medium text-[var(--text-primary)] mb-3 group-hover:text-white transition-colors">
             {project.title}
           </h3>
-          <p className="text-[var(--text-secondary)] text-sm leading-relaxed line-clamp-2">
+          <p className="text-[var(--text-secondary)] text-base leading-relaxed">
             {project.description}
           </p>
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between pt-4 border-t border-[var(--border-subtle)] mt-auto">
-          <span className="text-[var(--text-tertiary)] text-xs">
+        <div className="flex items-center justify-between pt-5 border-t border-[var(--border-subtle)] mt-auto">
+          <span className="text-[var(--text-tertiary)] text-sm">
             {project.role}
           </span>
-          <span className="text-[var(--text-tertiary)] text-xs">
+          <span className="text-[var(--text-tertiary)] text-sm">
             {project.duration}
           </span>
         </div>
