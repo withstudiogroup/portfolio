@@ -1,12 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
-const services = [
+interface Service {
+  title: string;
+  description: ReactNode;
+  icon: ReactNode;
+}
+
+const services: Service[] = [
   {
     title: "웹 서비스 신규 구축",
-    description:
-      "기획부터 배포까지 전 과정을 담당합니다. 처음 시작하는 서비스도 운영 경험을 바탕으로 확장 가능한 구조로 설계합니다.",
+    description: (
+      <>
+        기획부터 배포까지 전 과정을 담당합니다.
+        <br />
+        처음 시작하는 서비스도 운영 경험을 바탕으로 확장 가능한 구조로 설계합니다.
+      </>
+    ),
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -25,8 +37,13 @@ const services = [
   },
   {
     title: "관리자 대시보드",
-    description:
-      "비즈니스에 필요한 정보를 한눈에 볼 수 있는 대시보드를 만듭니다. 실시간 모니터링, 리포트 자동화, 권한 관리까지.",
+    description: (
+      <>
+        비즈니스에 필요한 정보를 한눈에 볼 수 있는 대시보드를 만듭니다.
+        <br />
+        실시간 모니터링, 리포트 자동화, 권한 관리까지.
+      </>
+    ),
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
@@ -76,7 +93,7 @@ export default function Services() {
               className="p-6 bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-2xl hover:border-[var(--border-hover)] transition-colors group"
             >
               <div className="flex items-start gap-4">
-                <div 
+                <div
                   className="w-10 h-10 rounded-lg bg-[var(--bg-subtle)] border border-[var(--border-subtle)] flex items-center justify-center flex-shrink-0 text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors"
                   aria-hidden="true"
                 >
