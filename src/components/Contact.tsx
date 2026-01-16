@@ -33,13 +33,15 @@ export default function Contact() {
           >
             <a
               href="tel:010-4708-0150"
-              className="flex items-center justify-center gap-3 text-[var(--text-primary)] text-lg hover:text-[var(--text-secondary)] transition-colors"
+              className="flex items-center justify-center gap-3 text-[var(--text-primary)] text-lg hover:text-[var(--text-secondary)] transition-colors min-h-[44px]"
+              aria-label="전화 걸기: 010-4708-0150"
             >
               <svg
                 className="w-5 h-5 text-[var(--text-tertiary)]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -52,13 +54,15 @@ export default function Contact() {
             </a>
             <a
               href="mailto:withstudiogroup@gmail.com"
-              className="flex items-center justify-center gap-3 text-[var(--text-primary)] text-lg hover:text-[var(--text-secondary)] transition-colors"
+              className="flex items-center justify-center gap-3 text-[var(--text-primary)] text-lg hover:text-[var(--text-secondary)] transition-colors min-h-[44px]"
+              aria-label="이메일 보내기: withstudiogroup@gmail.com"
             >
               <svg
                 className="w-5 h-5 text-[var(--text-tertiary)]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"

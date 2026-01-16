@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-[var(--nav-height)]">
+    <section className="relative min-h-screen flex items-center justify-center pt-[var(--nav-height)] pb-12">
       <div className="container text-center">
         {/* Badge */}
         <motion.div
@@ -23,11 +23,8 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mb-6"
         >
-          <span className="block text-[var(--text-primary)]">
-            직접 운영해본 사람들이
-          </span>
           <span className="block text-gradient">
-            만듭니다
+            From Dev to Live
           </span>
         </motion.h1>
 
@@ -50,8 +47,8 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3"
         >
-          <a href="#projects" className="btn-primary">
-            프로젝트 보기
+          <a href="#contact" className="btn-primary">
+            문의하기
             <svg
               className="w-4 h-4"
               fill="none"
@@ -66,8 +63,8 @@ export default function Hero() {
               />
             </svg>
           </a>
-          <a href="#contact" className="btn-secondary">
-            문의하기
+          <a href="#projects" className="btn-secondary">
+            프로젝트 보기
           </a>
         </motion.div>
 
@@ -81,18 +78,18 @@ export default function Hero() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             <div>
               <p className="text-3xl md:text-4xl font-medium text-[var(--text-primary)] mb-1">
-                5년+
+                1인
               </p>
               <p className="text-[var(--text-tertiary)] text-sm">
-                평균 경력
+                직접 대응
               </p>
             </div>
             <div>
               <p className="text-3xl md:text-4xl font-medium text-[var(--text-primary)] mb-1">
-                소수정예
+                5년+
               </p>
               <p className="text-[var(--text-tertiary)] text-sm">
-                팀 구성
+                개발 경력
               </p>
             </div>
             <div>

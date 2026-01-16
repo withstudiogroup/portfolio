@@ -19,9 +19,17 @@
   --text-tertiary: #6b7280;
   --text-muted: #4b5058;
 
-  /* Accent - Monochrome (no purple) */
+  /* Accent - Purple (PRD compliant) */
+  --accent-purple: #8B5CF6;
+  --accent-purple-hover: #A78BFA;
+  --accent-purple-subtle: rgba(139, 92, 246, 0.2);
+  
+  /* Monochrome accent (for subtle effects) */
   --accent: #f7f8f8;
   --accent-dim: rgba(255, 255, 255, 0.06);
+  
+  /* Semantic aliases */
+  --accent-primary: var(--accent-purple);
 
   /* Borders */
   --border-subtle: rgba(255, 255, 255, 0.06);
@@ -50,6 +58,13 @@
   --font-sans: var(--font-geist), system-ui, sans-serif;
 }
 
+/* Additional semantic aliases for consistency */
+:root {
+  --bg-secondary: var(--bg-elevated);
+  --bg-tertiary: var(--bg-subtle);
+  --border-primary: var(--border-default);
+}
+
 /* ============================================
    Base Styles
    ============================================ */
@@ -75,6 +90,18 @@ body {
 ::selection {
   background: rgba(255, 255, 255, 0.2);
   color: var(--text-primary);
+}
+
+/* Keyboard focus styles - WCAG compliant */
+*:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Remove default outline for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
 }
 
 /* Scrollbar - Minimal */
@@ -178,7 +205,8 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 16px;
+  padding: 12px 24px;
+  min-height: 44px;
   background: var(--text-primary);
   color: var(--bg-base);
   font-weight: 500;
@@ -198,7 +226,8 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 16px;
+  padding: 12px 24px;
+  min-height: 44px;
   background: transparent;
   color: var(--text-secondary);
   font-weight: 500;

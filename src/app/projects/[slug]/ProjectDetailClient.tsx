@@ -52,7 +52,7 @@ export default function ProjectDetailClient({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-primary)]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 rounded-2xl bg-[var(--bg-elevated)] border border-[var(--border-default)]">
           <div>
             <h3 className="text-sm text-[var(--text-tertiary)] mb-2">역할</h3>
             <p className="text-lg font-medium">{project.role}</p>
@@ -104,7 +104,7 @@ export default function ProjectDetailClient({
           {project.features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              className="p-6 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-primary)]"
+              className="p-6 rounded-xl bg-[var(--bg-elevated)] border border-[var(--border-default)]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
@@ -131,12 +131,12 @@ export default function ProjectDetailClient({
             {project.results.map((result, index) => (
               <motion.div
                 key={index}
-                className="p-6 rounded-xl bg-[var(--accent-primary)]/5 border border-[var(--accent-primary)]/20"
+                className="p-6 rounded-xl bg-[var(--accent-purple)]/5 border border-[var(--accent-purple)]/20"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
               >
-                <p className="text-lg font-medium text-[var(--accent-primary)]">
+                <p className="text-lg font-medium text-[var(--accent-purple)]">
                   {result}
                 </p>
               </motion.div>
@@ -160,6 +160,7 @@ export default function ProjectDetailClient({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
+                aria-label={`${project.title} 라이브 사이트 새 창에서 열기`}
               >
                 라이브 사이트 보기
                 <svg
@@ -183,6 +184,7 @@ export default function ProjectDetailClient({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary"
+                aria-label={`${project.title} GitHub 저장소 새 창에서 열기`}
               >
                 GitHub 보기
                 <svg
@@ -205,11 +207,12 @@ export default function ProjectDetailClient({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.7 }}
       >
-        <div className="flex justify-between items-center pt-12 border-t border-[var(--border-primary)]">
+        <div className="flex justify-between items-center pt-12 border-t border-[var(--border-default)]">
           {prevProject ? (
             <Link
               href={`/projects/${prevProject.slug}`}
               className="group flex items-center gap-3 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+              aria-label={`이전 프로젝트: ${prevProject.title}`}
             >
               <svg
                 className="w-5 h-5 transition-transform group-hover:-translate-x-1"
@@ -239,6 +242,7 @@ export default function ProjectDetailClient({
             <Link
               href={`/projects/${nextProject.slug}`}
               className="group flex items-center gap-3 text-right text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+              aria-label={`다음 프로젝트: ${nextProject.title}`}
             >
               <div>
                 <span className="text-sm text-[var(--text-tertiary)]">

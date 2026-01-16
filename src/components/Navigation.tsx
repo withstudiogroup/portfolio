@@ -18,8 +18,8 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { href: "#team", label: "팀 소개" },
-    { href: "#services", label: "서비스" },
+    { href: "#team", label: "소개" },
+    { href: "#services", label: "강점 분야" },
     { href: "#projects", label: "프로젝트" },
     { href: "#process", label: "협업 방식" },
     { href: "#contact", label: "문의" },
@@ -46,17 +46,18 @@ export default function Navigation() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-1" aria-label="메인 메뉴">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               className="px-4 py-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-sm font-medium transition-colors duration-200"
+              aria-label={`${link.label} 섹션으로 이동`}
             >
               {link.label}
             </a>
           ))}
-        </div>
+        </nav>
 
         {/* CTA Button */}
         <a
@@ -69,8 +70,10 @@ export default function Navigation() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 text-[var(--text-primary)]"
-          aria-label="Menu"
+          className="md:hidden p-3 text-[var(--text-primary)] min-w-[44px] min-h-[44px] flex items-center justify-center"
+          aria-label="메인 메뉴"
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
         >
           <svg
             className="w-5 h-5"
@@ -114,12 +117,14 @@ export default function Navigation() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
+          <motion.nav
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.3 }}
             className="md:hidden glass border-t border-[var(--border-subtle)] relative z-50"
+            aria-label="모바일 메뉴"
           >
             <div className="container py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -127,13 +132,14 @@ export default function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-4 py-3 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-elevated)] rounded-lg text-sm transition-all"
+                  className="px-4 py-3 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-elevated)] rounded-lg text-sm transition-all min-h-[44px] flex items-center"
+                  aria-label={`${link.label} 섹션으로 이동`}
                 >
                   {link.label}
                 </a>
               ))}
             </div>
-          </motion.div>
+          </motion.nav>
         )}
       </AnimatePresence>
     </header>

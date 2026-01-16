@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio With - 포트폴리오 재디자인 제안</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive;
+            background: #f5f5f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .wireframe-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border: 3px solid #333;
+            border-radius: 8px;
+        }
+        
+        .wireframe-header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #333;
+            margin-bottom: 40px;
+        }
+        
+        .wireframe-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .wireframe-header p {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        /* Component Badge Styles */
+        .component-badge-reuse {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            background: #4CAF50;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .component-badge-new {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            background: #FF9800;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        /* Section Styles */
+        .section {
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #e0e0e0;
+            border-left: 5px solid #333;
+        }
+        
+        /* Navigation */
+        .nav-box {
+            position: relative;
+            border: 2px solid #333;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+        }
+        
+        .nav-logo {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            padding: 8px 16px;
+            border: 2px solid #999;
+            background: #f9f9f9;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 80px 20px;
+            border: 3px dashed #666;
+            background: linear-gradient(to bottom, #f9f9f9, #fff);
+            margin-bottom: 40px;
+        }
+        
+        .status-badge-box {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 2px solid #4CAF50;
+            background: #e8f5e9;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .btn-primary-box {
+            position: relative;
+            padding: 12px 24px;
+            background: #333;
+            color: white;
+            border: 3px solid #333;
+            font-weight: bold;
+        }
+        
+        .btn-secondary-box {
+            position: relative;
+            padding: 12px 24px;
+            background: white;
+            border: 3px solid #333;
+            font-weight: bold;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #ccc;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #999;
+            background: #fafafa;
+        }
+        
+        .stat-value {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Filter Section - NEW */
+        .filter-section {
+            position: relative;
+            padding: 20px;
+            border: 2px solid #FF9800;
+            background: #fff3e0;
+            margin-bottom: 30px;
+        }
+        
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-tab {
+            padding: 8px 16px;
+            border: 2px solid #666;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .filter-tab.active {
+            background: #333;
+            color: white;
+        }
+        
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .project-card {
+            position: relative;
+            border: 3px solid #333;
+            padding: 20px;
+            background: white;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+        
+        .project-number {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .tag-box {
+            padding: 4px 12px;
+            border: 2px solid #999;
+            border-radius: 20px;
+            font-size: 12px;
+            background: #f5f5f5;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 200px;
+            border: 2px solid #999;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            color: #666;
+        }
+        
+        .project-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .project-desc {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 15px;
+            border-top: 2px solid #ddd;
+            font-size: 12px;
+            color: #999;
+        }
+        
+        /* Team Section - Enhanced */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .team-intro {
+            position: relative;
+        }
+        
+        .team-members {
+            position: relative;
+        }
+        
+        .team-member-card {
+            position: relative;
+            padding: 20px;
+            border: 2px solid #666;
+            background: #fafafa;
+            margin-bottom: 15px;
+        }
+        
+        .team-role {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .team-skills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        
+        .skill-badge {
+            padding: 4px 10px;
+            background: #e0e0e0;
+            border: 1px solid #999;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .service-card {
+            position: relative;
+            border: 2px solid #666;
+            padding: 20px;
+            background: #fafafa;
+        }
+        
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #999;
+            background: #e0e0e0;
+            margin-bottom: 15px;
+        }
+        
+        .service-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .service-desc {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .process-step {
+            position: relative;
+            padding: 30px 20px;
+            border: 2px solid #666;
+            background: #f9f9f9;
+        }
+        
+        .step-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+        
+        .step-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .step-desc {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* Contact Section */
+        .contact-box {
+            text-align: center;
+            padding: 60px 20px;
+            border: 3px dashed #666;
+            background: #fafafa;
+        }
+        
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .contact-link {
+            padding: 15px 30px;
+            border: 2px solid #333;
+            background: white;
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Footer */
+        .footer-box {
+            position: relative;
+            border-top: 2px solid #333;
+            padding: 20px;
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Mobile View Indicator */
+        .mobile-view {
+            margin-top: 60px;
+            padding: 30px;
+            border: 3px dashed #FF9800;
+            background: #fff3e0;
+            text-align: center;
+        }
+        
+        .mobile-view h3 {
+            margin-bottom: 20px;
+            color: #FF6F00;
+        }
+        
+        .device-frame {
+            max-width: 375px;
+            margin: 0 auto;
+            border: 3px solid #333;
+            padding: 20px;
+            background: white;
+        }
+        
+        .mobile-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 2px solid #333;
+            margin-bottom: 20px;
+        }
+        
+        .hamburger {
+            width: 30px;
+            height: 20px;
+            border: 2px solid #333;
+            background: #f0f0f0;
+        }
+        
+        .mobile-hero {
+            text-align: center;
+            padding: 30px 10px;
+            border: 2px dashed #666;
+            margin-bottom: 20px;
+        }
+        
+        .mobile-projects {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .mobile-project-card {
+            border: 2px solid #333;
+            padding: 15px;
+            background: #fafafa;
+        }
+        
+        /* Notes Section */
+        .notes-box {
+            margin-top: 40px;
+            padding: 20px;
+            background: #fffacd;
+            border: 2px solid #ffd700;
+            border-radius: 8px;
+        }
+        
+        .notes-box h3 {
+            margin-bottom: 15px;
+            color: #b8860b;
+        }
+        
+        .notes-box ul {
+            margin-left: 20px;
+        }
+        
+        .notes-box li {
+            margin-bottom: 8px;
+            color: #666;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .projects-grid,
+            .team-grid,
+            .services-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-container">
+        <div class="wireframe-header">
+            <h1>🎨 Studio With - 포트폴리오 재디자인 제안</h1>
+            <p>개선된 정보 계층 구조와 향상된 사용자 경험</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="section">
+            <div class="section-title">📍 Navigation (Fixed Header)</div>
+            <!-- REUSABLE: Navigation from src/components/Navigation.tsx -->
+            <div class="nav-box" style="position: relative;">
+                <span class="component-badge-reuse" title="src/components/Navigation.tsx">[REUSE] Navigation</span>
+                <div class="nav-logo">Studio With</div>
+                <div class="nav-links">
+                    <a href="#" class="nav-link">팀 소개</a>
+                    <a href="#" class="nav-link">서비스</a>
+                    <a href="#" class="nav-link">프로젝트</a>
+                    <a href="#" class="nav-link">협업 방식</a>
+                    <a href="#" class="nav-link">문의</a>
+                </div>
+                <button class="btn-secondary-box" style="position: relative;">
+                    <span class="component-badge-reuse" title="globals.css: .btn-secondary" style="top: -8px; right: -8px;">[REUSE] btn-secondary</span>
+                    문의하기
+                </button>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="section">
+            <div class="section-title">🎯 Hero Section (Enhanced)</div>
+            <!-- REUSABLE: Hero structure from src/components/Hero.tsx -->
+            <div class="hero" style="position: relative;">
+                <span class="component-badge-reuse" title="src/components/Hero.tsx">[REUSE] Hero (enhanced)</span>
+                
+                <!-- REUSABLE: Status Badge -->
+                <div class="status-badge-box" style="position: relative;">
+                    <span class="component-badge-reuse" title="globals.css: .status-badge" style="top: -8px; right: 50%; transform: translateX(50%);">[REUSE] status-badge</span>
+                    ✓ 프로젝트 문의 가능
+                </div>
+                
+                <h1>직접 운영해본 사람들이<br>만듭니다</h1>
+                <p>"일단 돌아가게만" 만드는 게 아니라,<br>운영하면서 생길 문제까지 미리 고려해서 개발합니다.</p>
+                
+                <div class="cta-buttons">
+                    <!-- REUSABLE: Button styles -->
+                    <button class="btn-primary-box" style="position: relative;">
+                        <span class="component-badge-reuse" title="globals.css: .btn-primary" style="top: -8px; right: -8px;">[REUSE] btn-primary</span>
+                        프로젝트 보기 →
+                    </button>
+                    <button class="btn-secondary-box" style="position: relative;">
+                        <span class="component-badge-reuse" title="globals.css: .btn-secondary" style="top: -8px; right: -8px;">[REUSE] btn-secondary</span>
+                        문의하기
+                    </button>
+                </div>
+                
+                <!-- REUSABLE: Stats from Hero.tsx -->
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-value">5년+</div>
+                        <div class="stat-label">평균 경력</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">소수정예</div>
+                        <div class="stat-label">팀 구성</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">빠른</div>
+                        <div class="stat-label">커뮤니케이션</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">동일</div>
+                        <div class="stat-label">담당자 유지</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="section">
+            <div class="section-title">👥 Team Section</div>
+            <!-- REUSABLE: Team component structure -->
+            <div class="team-grid">
+                <div class="team-intro" style="position: relative;">
+                    <span class="component-badge-reuse" title="src/components/Team.tsx">[REUSE] Team (enhanced)</span>
+                    <div style="color: #999; font-size: 12px; margin-bottom: 10px;">About Us</div>
+                    <h2 style="margin-bottom: 20px;">팀 소개</h2>
+                    <p style="color: #666; margin-bottom: 15px;">저희는 개발만 하고 끝나는 팀이 아닙니다.</p>
+                    <p style="color: #666; margin-bottom: 15px;">실제 서비스를 운영하며 겪은 현장의 문제들을 직접 해결해본 경험이 있습니다.</p>
+                    <p style="color: #666;">소수 정예로 움직이기 때문에 커뮤니케이션이 빠르고, 유지보수 요청에도 담당자가 바뀌는 일 없이 직접 대응합니다.</p>
+                </div>
+                
+                <div class="team-members">
+                    <div style="color: #999; font-size: 12px; margin-bottom: 10px;">Team</div>
+                    <h3 style="margin-bottom: 20px;">팀 구성</h3>
+                    
+                    <div class="team-member-card">
+                        <div class="team-role">전략 / 데이터분석</div>
+                        <div style="color: #999; font-size: 12px;">영업 5년 + 데이터분석 7년</div>
+                        <div class="team-skills">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">SQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member-card">
+                        <div class="team-role">백엔드 개발</div>
+                        <div style="color: #999; font-size: 12px;">5년</div>
+                        <div class="team-skills">
+                            <span class="skill-badge">Node.js</span>
+                            <span class="skill-badge">Python</span>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member-card">
+                        <div class="team-role">프론트엔드 개발</div>
+                        <div style="color: #999; font-size: 12px;">5년</div>
+                        <div class="team-skills">
+                            <span class="skill-badge">React</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="section">
+            <div class="section-title">💼 Services Section</div>
+            <div style="text-align: center; margin-bottom: 30px;">
+                <div style="color: #999; font-size: 12px; margin-bottom: 10px;">What We Do</div>
+                <h2 style="margin-bottom: 15px;">강점 분야</h2>
+                <p style="color: #666;">운영 경험을 바탕으로 실제로 잘 동작하는 시스템을 만듭니다.</p>
+            </div>
+            
+            <!-- REUSABLE: Services cards -->
+            <div class="services-grid" style="position: relative;">
+                <span class="component-badge-reuse" title="src/components/Services.tsx">[REUSE] Services</span>
+                
+                <div class="service-card">
+                    <div class="service-icon">[icon]</div>
+                    <div class="service-title">웹 서비스 신규 구축</div>
+                    <div class="service-desc">기획부터 배포까지 전 과정을 담당합니다. 처음 시작하는 서비스도 운영 경험을 바탕으로 확장 가능한 구조로 설계합니다.</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">[icon]</div>
+                    <div class="service-title">데이터 수집/분석 자동화</div>
+                    <div class="service-desc">반복적인 데이터 수집을 자동화하고, 분석 파이프라인을 구축합니다.</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">[icon]</div>
+                    <div class="service-title">관리자 대시보드</div>
+                    <div class="service-desc">비즈니스에 필요한 정보를 한눈에 볼 수 있는 대시보드를 만듭니다.</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">[icon]</div>
+                    <div class="service-title">외부 API 연동</div>
+                    <div class="service-desc">결제, 배송, 알림 등 다양한 외부 서비스와의 연동을 담당합니다.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section with Filter -->
+        <div class="section">
+            <div class="section-title">🎨 Projects Section (Enhanced with Filter)</div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <div style="color: #999; font-size: 12px; margin-bottom: 10px;">Featured Work</div>
+                <h2 style="margin-bottom: 15px;">Selected Projects</h2>
+                <p style="color: #666;">사용자 경험과 비즈니스 가치를 모두 고려한 프로젝트들입니다.</p>
+            </div>
+            
+            <!-- NEW: Project Filter -->
+            <div class="filter-section" style="position: relative;">
+                <span class="component-badge-new" title="To be created at src/components/ProjectFilter.tsx">[NEW] ProjectFilter</span>
+                <div style="margin-bottom: 15px; font-weight: bold;">기술 스택으로 필터:</div>
+                <div class="filter-tabs">
+                    <button class="filter-tab active">전체</button>
+                    <button class="filter-tab">Next.js</button>
+                    <button class="filter-tab">React</button>
+                    <button class="filter-tab">Python</button>
+                    <button class="filter-tab">TypeScript</button>
+                    <button class="filter-tab">PostgreSQL</button>
+                    <button class="filter-tab">데이터 분석</button>
+                </div>
+            </div>
+            
+            <!-- REUSABLE: ProjectCard components -->
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" style="position: relative;">
+                    <span class="component-badge-reuse" title="src/components/ProjectCard.tsx">[REUSE] ProjectCard</span>
+                    <div class="project-header">
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <div class="project-number">01</div>
+                            <div class="project-tags">
+                                <span class="tag-box" style="position: relative;">
+                                    <span class="component-badge-reuse" title="globals.css: .tag" style="top: -8px; right: -8px; font-size: 9px;">[REUSE] tag</span>
+                                    예약 시스템
+                                </span>
+                                <span class="tag-box">결제 연동</span>
+                            </div>
+                        </div>
+                        <div style="font-size: 20px; color: #999;">↗</div>
+                    </div>
+                    
+                    <div class="project-image">[프로젝트 썸네일]<br>400 x 300</div>
+                    
+                    <div class="project-title">호텔 예약 사이트</div>
+                    <div class="project-desc">실시간 객실 조회부터 결제까지, 완전한 호텔 예약 시스템을 처음부터 구축했습니다.</div>
+                    
+                    <div class="project-meta">
+                        <span>풀스택 개발</span>
+                        <span>3개월</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <div class="project-number">02</div>
+                            <div class="project-tags">
+                                <span class="tag-box">포트폴리오</span>
+                                <span class="tag-box">예약 시스템</span>
+                            </div>
+                        </div>
+                        <div style="font-size: 20px; color: #999;">↗</div>
+                    </div>
+                    
+                    <div class="project-image">[프로젝트 썸네일]<br>400 x 300</div>
+                    
+                    <div class="project-title">사진 스튜디오 홈페이지</div>
+                    <div class="project-desc">포트폴리오 갤러리와 예약 기능을 갖춘 프리미엄 사진 스튜디오 웹사이트입니다.</div>
+                    
+                    <div class="project-meta">
+                        <span>프론트엔드 개발</span>
+                        <span>2개월</span>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <div class="project-number">03</div>
+                            <div class="project-tags">
+                                <span class="tag-box">데이터 시각화</span>
+                                <span class="tag-box">자동화</span>
+                            </div>
+                        </div>
+                        <div style="font-size: 20px; color: #999;">↗</div>
+                    </div>
+                    
+                    <div class="project-image">[프로젝트 썸네일]<br>400 x 300</div>
+                    
+                    <div class="project-title">비즈니스 분석 대시보드</div>
+                    <div class="project-desc">여러 데이터 소스를 통합하여 핵심 지표를 실시간으로 모니터링하는 대시보드입니다.</div>
+                    
+                    <div class="project-meta">
+                        <span>데이터 + 프론트엔드</span>
+                        <span>4개월</span>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <div class="project-number">04</div>
+                            <div class="project-tags">
+                                <span class="tag-box">데이터 수집</span>
+                                <span class="tag-box">자동화</span>
+                            </div>
+                        </div>
+                        <div style="font-size: 20px; color: #999;">↗</div>
+                    </div>
+                    
+                    <div class="project-image">[프로젝트 썸네일]<br>400 x 300</div>
+                    
+                    <div class="project-title">경쟁사 자동 크롤링 시스템</div>
+                    <div class="project-desc">경쟁사 가격과 상품 정보를 자동으로 수집하여 비교 분석하는 시스템입니다.</div>
+                    
+                    <div class="project-meta">
+                        <span>백엔드 + 데이터</span>
+                        <span>3개월</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#" style="color: #666; text-decoration: underline;">View all projects →</a>
+            </div>
+        </div>
+
+        <!-- Process Section -->
+        <div class="section" style="background: #f9f9f9; padding: 30px; margin: 0 -30px;">
+            <div class="section-title">⚙️ Process Section</div>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <div style="color: #999; font-size: 12px; margin-bottom: 10px;">How We Work</div>
+                <h2 style="margin-bottom: 15px;">협업 방식</h2>
+                <p style="color: #666;">소수 정예로 움직이기 때문에 빠르고 유연하게 대응합니다.</p>
+            </div>
+            
+            <!-- REUSABLE: Process steps -->
+            <div class="process-steps" style="position: relative;">
+                <span class="component-badge-reuse" title="src/components/Process.tsx">[REUSE] Process</span>
+                
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-title">요구사항 파악</div>
+                    <div class="step-desc">단순히 요청받은 기능만 구현하지 않습니다. 왜 필요한지, 어떻게 사용될지 충분히 이해한 후 최적의 방법을 제안합니다.</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-title">주기적 공유</div>
+                    <div class="step-desc">주 1~2회 진행 상황을 공유합니다. 완성 후 "생각한 것과 다르다"는 피드백이 없도록 중간중간 확인받습니다.</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-title">동일 담당자 유지</div>
+                    <div class="step-desc">프로젝트를 진행한 사람이 유지보수까지 담당합니다. 담당자가 바뀌어 처음부터 설명해야 하는 일이 없습니다.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section">
+            <div class="section-title">📧 Contact Section</div>
+            <!-- REUSABLE: Contact component -->
+            <div class="contact-box" style="position: relative;">
+                <span class="component-badge-reuse" title="src/components/Contact.tsx">[REUSE] Contact</span>
+                
+                <div style="color: #999; font-size: 12px; margin-bottom: 10px;">Contact</div>
+                <h2 style="margin-bottom: 20px;">프로젝트 문의</h2>
+                <p style="color: #666; max-width: 600px; margin: 0 auto 30px;">새로운 프로젝트나 협업 제안이 있으시면<br>언제든 연락 주세요.</p>
+                
+                <div class="contact-links">
+                    <a href="#" class="contact-link">
+                        📞 010-4708-0150
+                    </a>
+                    <a href="#" class="contact-link">
+                        ✉️ withstudiogroup@gmail.com
+                    </a>
+                </div>
+                
+                <button class="btn-primary-box" style="margin-top: 20px;">
+                    이메일 보내기 →
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="section">
+            <div class="section-title">🔗 Footer</div>
+            <!-- REUSABLE: Footer -->
+            <div class="footer-box" style="position: relative;">
+                <span class="component-badge-reuse" title="src/components/Footer.tsx">[REUSE] Footer</span>
+                
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 30px; height: 30px; background: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">W</div>
+                    <span>Studio With</span>
+                </div>
+                
+                <div>© 2026 Studio With. All rights reserved.</div>
+                
+                <div style="display: flex; gap: 20px;">
+                    <a href="#" style="color: #666;">010-4708-0150</a>
+                    <a href="#" style="color: #666;">Email</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Responsive View -->
+        <div class="mobile-view">
+            <h3>📱 Mobile View (375px)</h3>
+            <p style="margin-bottom: 20px; color: #666;">햄버거 메뉴, 단일 컬럼 레이아웃, 터치 친화적 인터페이스</p>
+            
+            <div class="device-frame">
+                <div class="mobile-nav">
+                    <div style="font-weight: bold;">Studio With</div>
+                    <div class="hamburger">[☰]</div>
+                </div>
+                
+                <div class="mobile-hero">
+                    <div style="font-size: 24px; font-weight: bold; margin-bottom: 15px;">직접 운영해본<br>사람들이 만듭니다</div>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 15px;">운영 경험을 바탕으로<br>개발합니다</p>
+                    <button style="width: 100%; padding: 12px; background: #333; color: white; border: 2px solid #333; margin-bottom: 8px;">프로젝트 보기</button>
+                    <button style="width: 100%; padding: 12px; background: white; border: 2px solid #333;">문의하기</button>
+                </div>
+                
+                <div class="mobile-projects">
+                    <div class="mobile-project-card">
+                        <div style="width: 100%; height: 150px; background: #e0e0e0; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; border: 2px solid #999;">[프로젝트 이미지]</div>
+                        <div style="font-weight: bold; margin-bottom: 8px;">호텔 예약 사이트</div>
+                        <div style="font-size: 12px; color: #666;">실시간 객실 조회부터 결제까지...</div>
+                    </div>
+                    
+                    <div class="mobile-project-card">
+                        <div style="width: 100%; height: 150px; background: #e0e0e0; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; border: 2px solid #999;">[프로젝트 이미지]</div>
+                        <div style="font-weight: bold; margin-bottom: 8px;">사진 스튜디오</div>
+                        <div style="font-size: 12px; color: #666;">포트폴리오 갤러리와 예약...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Design Notes -->
+        <div class="notes-box">
+            <h3>💡 주요 개선 사항</h3>
+            <ul>
+                <li><strong>프로젝트 필터 추가</strong>: 사용자가 기술 스택별로 프로젝트를 필터링할 수 있어 관심 프로젝트를 쉽게 찾을 수 있습니다.</li>
+                <li><strong>정보 계층 구조 개선</strong>: 팀 소개를 서비스보다 먼저 배치하여 신뢰도를 먼저 구축합니다.</li>
+                <li><strong>반응형 최적화</strong>: 모바일에서 단일 컬럼 레이아웃으로 전환되며, 터치 친화적인 요소 크기를 유지합니다.</li>
+                <li><strong>기존 컴포넌트 재사용</strong>: Navigation, Hero, Team, Services, ProjectCard, Process, Contact, Footer 등 기존 컴포넌트를 최대한 재사용하여 개발 시간을 단축합니다.</li>
+                <li><strong>새로운 컴포넌트</strong>: ProjectFilter 컴포넌트만 새로 개발하면 됩니다 (src/components/ProjectFilter.tsx).</li>
+                <li><strong>애니메이션</strong>: Framer Motion을 사용한 Fade Up, Stagger 애니메이션 유지</li>
+                <li><strong>접근성</strong>: 키보드 네비게이션, ARIA 레이블, 적절한 색상 대비 유지</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

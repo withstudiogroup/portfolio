@@ -56,8 +56,8 @@ export default function Services() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="section-label mx-auto">What We Do</span>
-          <h2 className="mb-4">강점 분야</h2>
+          <span className="section-label mx-auto">What I Do</span>
+          <h2 className="mb-4">이런 프로젝트에 강합니다</h2>
           <p className="text-[var(--text-secondary)] text-lg max-w-xl mx-auto">
             운영 경험을 바탕으로
             <br className="hidden sm:block" />
@@ -76,7 +76,10 @@ export default function Services() {
               className="p-6 bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-2xl hover:border-[var(--border-hover)] transition-colors group"
             >
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-[var(--bg-subtle)] border border-[var(--border-subtle)] flex items-center justify-center flex-shrink-0 text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors">
+                <div 
+                  className="w-10 h-10 rounded-lg bg-[var(--bg-subtle)] border border-[var(--border-subtle)] flex items-center justify-center flex-shrink-0 text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors"
+                  aria-hidden="true"
+                >
                   {service.icon}
                 </div>
                 <div>

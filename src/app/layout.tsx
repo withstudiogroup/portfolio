@@ -37,12 +37,12 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Studio With | 직접 운영해본 사람들이 만듭니다",
+  title: "Studio With | From Dev to Live",
   description: "웹 서비스 구축, 데이터 자동화, 관리자 대시보드 개발. 운영 경험을 바탕으로 실제로 잘 동작하는 시스템을 만듭니다.",
   keywords: ["웹개발", "외주", "대시보드", "데이터 자동화", "React", "Next.js", "Python"],
   authors: [{ name: "Studio With" }],
   openGraph: {
-    title: "Studio With | 직접 운영해본 사람들이 만듭니다",
+    title: "Studio With | From Dev to Live",
     description: "웹 서비스 구축, 데이터 자동화, 관리자 대시보드 개발. 운영 경험을 바탕으로 실제로 잘 동작하는 시스템을 만듭니다.",
     type: "website",
     locale: "ko_KR",

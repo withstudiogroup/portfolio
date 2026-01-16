@@ -21,7 +21,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         ease: "easeOut",
       }}
     >
-      <Link href={`/projects/${project.slug}`} className="group card block p-6">
+      <Link 
+        href={`/projects/${project.slug}`} 
+        className="group card block p-6"
+        aria-label={`${project.title} 프로젝트 상세보기`}
+      >
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
@@ -41,7 +45,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             </div>
           </div>
           {/* Arrow */}
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <div 
+            className="w-8 h-8 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity"
+            aria-hidden="true"
+          >
             <svg
               className="w-4 h-4 text-[var(--text-secondary)]"
               fill="none"
