@@ -20,10 +20,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         delay: index * 0.1,
         ease: "easeOut",
       }}
+      className="h-full"
     >
-      <Link 
-        href={`/projects/${project.slug}`} 
-        className="group card block p-6"
+      <Link
+        href={`/projects/${project.slug}`}
+        className="group card block p-6 h-full flex flex-col"
         aria-label={`${project.title} 프로젝트 상세보기`}
       >
         {/* Header */}
@@ -45,7 +46,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             </div>
           </div>
           {/* Arrow */}
-          <div 
+          <div
             className="w-8 h-8 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity"
             aria-hidden="true"
           >
@@ -66,17 +67,17 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         {/* Content */}
-        <div className="mb-4">
+        <div className="flex-1 mb-4">
           <h3 className="text-xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-white transition-colors">
             {project.title}
           </h3>
-          <p className="text-[var(--text-secondary)] text-sm leading-relaxed line-clamp-2 min-h-[2.5rem]">
+          <p className="text-[var(--text-secondary)] text-sm leading-relaxed line-clamp-2">
             {project.description}
           </p>
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between pt-4 border-t border-[var(--border-subtle)]">
+        <div className="flex items-center justify-between pt-4 border-t border-[var(--border-subtle)] mt-auto">
           <span className="text-[var(--text-tertiary)] text-xs">
             {project.role}
           </span>
