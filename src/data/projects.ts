@@ -75,7 +75,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["포트폴리오", "예약"],
     techStack: ["Next.js", "TypeScript", "Framer Motion", "Swiper", "Tailwind CSS"],
-    liveUrl: "",
+    liveUrl: "https://withstudiogroup.com/studio",
     featured: true,
     order: 2,
     overview:
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["예약 시스템", "결제"],
     techStack: ["Next.js", "TypeScript", "Zustand", "Framer Motion", "Tailwind CSS"],
-    liveUrl: "",
+    liveUrl: "https://withstudiogroup.com/hotel",
     featured: true,
     order: 3,
     overview:
@@ -145,7 +145,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["브랜딩", "애니메이션"],
     techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
-    liveUrl: "",
+    liveUrl: "https://withstudiogroup.com/resort",
     featured: true,
     order: 4,
     overview:
@@ -167,41 +167,6 @@ export const projects: Project[] = [
         title: "반응형 디자인",
         description:
           "모바일부터 데스크톱까지 일관된 브랜드 경험",
-      },
-    ],
-  },
-  {
-    id: "5",
-    slug: "tech-store",
-    title: "전자제품 스토어",
-    description:
-      "제품을 돋보이게 하는 깔끔한 레이아웃의 전자제품 판매 사이트.",
-    thumbnail: "/images/projects/techstore/thumbnail.jpg",
-    images: [],
-    tags: ["이커머스", "쇼케이스"],
-    techStack: ["Next.js", "TypeScript", "Zustand", "Framer Motion", "Tailwind CSS"],
-    liveUrl: "",
-    featured: true,
-    order: 5,
-    overview:
-      "프리미엄 전자제품 온라인 스토어입니다. 제품을 돋보이게 하는 깔끔한 레이아웃, 상세한 스펙 비교, 부드러운 애니메이션으로 쇼핑 경험을 제공합니다.",
-    role: "프론트엔드 개발",
-    duration: "2개월",
-    features: [
-      {
-        title: "제품 중심 레이아웃",
-        description:
-          "넓은 여백과 고해상도 이미지로 제품을 돋보이게 표현",
-      },
-      {
-        title: "상세 스펙 비교",
-        description:
-          "여러 제품의 사양을 나란히 비교하는 기능",
-      },
-      {
-        title: "부드러운 인터랙션",
-        description:
-          "스크롤 기반 애니메이션과 호버 효과",
       },
     ],
   },
