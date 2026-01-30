@@ -14,12 +14,12 @@ Write-Host "📦 메인 포트폴리오 빌드 중..." -ForegroundColor Yellow
 Set-Location $MAIN_PROJECT
 npm run build
 
-# 서브 프로젝트 목록
+# 서브 프로젝트 목록 (폴더명 = basePath)
 $PROJECTS = @{
-    "hotel-site" = "$BASE_DIR\hotel-site"
-    "resort-site" = "$BASE_DIR\resort-site"
-    "studio-site" = "$BASE_DIR\studio-site"
-    "shop-site" = "$BASE_DIR\shop-site"
+    "hotel" = "$BASE_DIR\hotel-site"
+    "resort" = "$BASE_DIR\resort-site"
+    "studio" = "$BASE_DIR\studio-site"
+    "shop" = "$BASE_DIR\shop-site"
     "photopick" = "$BASE_DIR\photopick"
     "photopick-v2" = "$BASE_DIR\photopick-v2\photopick"
 }
@@ -49,6 +49,11 @@ Write-Host ""
 Write-Host "✅ 전체 빌드 완료!" -ForegroundColor Green
 Write-Host "📂 출력 위치: $OUTPUT_DIR" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "배포 방법:" -ForegroundColor White
-Write-Host "  1. Vercel CLI: vercel --prod" -ForegroundColor Gray
-Write-Host "  2. 또는 out 폴더를 정적 호스팅에 업로드" -ForegroundColor Gray
+Write-Host "URL 구조:" -ForegroundColor White
+Write-Host "  /          - 메인 포트폴리오" -ForegroundColor Gray
+Write-Host "  /studio    - 사진 스튜디오" -ForegroundColor Gray
+Write-Host "  /hotel     - 호텔 예약" -ForegroundColor Gray
+Write-Host "  /resort    - 리조트" -ForegroundColor Gray
+Write-Host "  /shop      - 전자제품 쇼핑몰" -ForegroundColor Gray
+Write-Host "  /photopick - 스튜디오 예약 플랫폼" -ForegroundColor Gray
+Write-Host "  /photopick-v2 - PhotoPick 풀스택" -ForegroundColor Gray

@@ -75,7 +75,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["포트폴리오", "예약"],
     techStack: ["Next.js", "TypeScript", "Framer Motion", "Swiper", "Tailwind CSS"],
-    liveUrl: "https://withstudiogroup.com/studio-site",
+    liveUrl: "https://withstudiogroup.com/studio",
     featured: true,
     order: 2,
     overview:
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["예약 시스템", "결제"],
     techStack: ["Next.js", "TypeScript", "Zustand", "Framer Motion", "Tailwind CSS"],
-    liveUrl: "https://withstudiogroup.com/hotel-site",
+    liveUrl: "https://withstudiogroup.com/hotel",
     featured: true,
     order: 3,
     overview:
@@ -145,7 +145,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["브랜딩", "애니메이션"],
     techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
-    liveUrl: "https://withstudiogroup.com/resort-site",
+    liveUrl: "https://withstudiogroup.com/resort",
     featured: true,
     order: 4,
     overview:
@@ -180,7 +180,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["이커머스", "제품 쇼케이스"],
     techStack: ["Next.js", "TypeScript", "Zustand", "Framer Motion", "Tailwind CSS"],
-    liveUrl: "https://withstudiogroup.com/shop-site",
+    liveUrl: "https://withstudiogroup.com/shop",
     featured: true,
     order: 5,
     overview:

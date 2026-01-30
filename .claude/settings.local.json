@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "Bash(npm run dev:*)",
+      "mcp__plugin_playwright_playwright__browser_wait_for",
+      "Bash(npx next dev -p 3001)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nrefactor: 프로젝트 상세 페이지 전체 리디자인\n\n- 섹션별 여백 대폭 확대 \\(py-24 md:py-32\\)\n- 메인 페이지와 통일된 디자인 시스템 적용\n- section-label 스타일 일관성 적용\n- 카드 스타일 통일 \\(rounded-2xl, hover 효과\\)\n- 프로젝트 네비게이션을 카드 형태로 개선\n- 배경색 교차 패턴 적용 \\(bg-elevated\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)"
+    ]
+  }
+}
