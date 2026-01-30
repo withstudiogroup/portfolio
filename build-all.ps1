@@ -1,0 +1,54 @@
+# 모든 프로젝트를 빌드하고 메인 포트폴리오에 통합하는 PowerShell 스크립트
+# 실행: .\build-all.ps1
+
+$ErrorActionPreference = "Stop"
+
+$BASE_DIR = "C:\Users\user\Documents\claudecode-project"
+$MAIN_PROJECT = "$BASE_DIR\portfolio4"
+$OUTPUT_DIR = "$MAIN_PROJECT\out"
+
+Write-Host "🚀 전체 프로젝트 빌드 시작..." -ForegroundColor Cyan
+
+# 메인 포트폴리오 빌드
+Write-Host "📦 메인 포트폴리오 빌드 중..." -ForegroundColor Yellow
+Set-Location $MAIN_PROJECT
+npm run build
+
+# 서브 프로젝트 목록
+$PROJECTS = @{
+    "hotel-site" = "$BASE_DIR\hotel-site"
+    "resort-site" = "$BASE_DIR\resort-site"
+    "studio-site" = "$BASE_DIR\studio-site"
+    "shop-site" = "$BASE_DIR\shop-site"
+    "photopick" = "$BASE_DIR\photopick"
+    "photopick-v2" = "$BASE_DIR\photopick-v2\photopick"
+}
+
+foreach ($PROJECT_NAME in $PROJECTS.Keys) {
+    $PROJECT_PATH = $PROJECTS[$PROJECT_NAME]
+
+    Write-Host "📦 $PROJECT_NAME 빌드 중..." -ForegroundColor Yellow
+    Set-Location $PROJECT_PATH
+    npm run build
+
+    # 빌드 결과를 메인 out 폴더로 복사
+    $SOURCE = "$PROJECT_PATH\out\$PROJECT_NAME"
+    $DEST = "$OUTPUT_DIR\$PROJECT_NAME"
+
+    Write-Host "📁 $PROJECT_NAME → out\$PROJECT_NAME 복사 중..." -ForegroundColor Green
+
+    if (Test-Path $DEST) {
+        Remove-Item -Recurse -Force $DEST
+    }
+    Copy-Item -Recurse $SOURCE $DEST
+}
+
+Set-Location $MAIN_PROJECT
+
+Write-Host ""
+Write-Host "✅ 전체 빌드 완료!" -ForegroundColor Green
+Write-Host "📂 출력 위치: $OUTPUT_DIR" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "배포 방법:" -ForegroundColor White
+Write-Host "  1. Vercel CLI: vercel --prod" -ForegroundColor Gray
+Write-Host "  2. 또는 out 폴더를 정적 호스팅에 업로드" -ForegroundColor Gray

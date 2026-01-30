@@ -75,7 +75,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["포트폴리오", "예약"],
     techStack: ["Next.js", "TypeScript", "Framer Motion", "Swiper", "Tailwind CSS"],
-    liveUrl: "https://withstudiogroup.com/studio",
+    liveUrl: "https://withstudiogroup.com/studio-site",
     featured: true,
     order: 2,
     overview:
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["예약 시스템", "결제"],
     techStack: ["Next.js", "TypeScript", "Zustand", "Framer Motion", "Tailwind CSS"],
-    liveUrl: "https://withstudiogroup.com/hotel",
+    liveUrl: "https://withstudiogroup.com/hotel-site",
     featured: true,
     order: 3,
     overview:
@@ -145,7 +145,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["브랜딩", "애니메이션"],
     techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
-    liveUrl: "https://withstudiogroup.com/resort",
+    liveUrl: "https://withstudiogroup.com/resort-site",
     featured: true,
     order: 4,
     overview:
@@ -167,6 +167,111 @@ export const projects: Project[] = [
         title: "반응형 디자인",
         description:
           "모바일부터 데스크톱까지 일관된 브랜드 경험",
+      },
+    ],
+  },
+  {
+    id: "5",
+    slug: "shop-site",
+    title: "전자제품 쇼핑몰",
+    description:
+      "노트북, 스마트폰, 태블릿 등 프리미엄 전자제품을 소개하는 제품 쇼케이스 사이트.",
+    thumbnail: "/images/projects/shop/thumbnail.jpg",
+    images: [],
+    tags: ["이커머스", "제품 쇼케이스"],
+    techStack: ["Next.js", "TypeScript", "Zustand", "Framer Motion", "Tailwind CSS"],
+    liveUrl: "https://withstudiogroup.com/shop-site",
+    featured: true,
+    order: 5,
+    overview:
+      "프리미엄 전자제품 리테일 사이트입니다. 제품 갤러리, 상세 스펙, 트레이드인 프로그램, 액세서리 추천 등 제품 판매에 필요한 기능을 구현했습니다.",
+    role: "프론트엔드 개발",
+    duration: "2개월",
+    features: [
+      {
+        title: "제품 갤러리",
+        description:
+          "고품질 이미지와 상세 스펙으로 제품의 가치를 전달",
+      },
+      {
+        title: "트레이드인 프로그램",
+        description:
+          "기존 기기 보상판매 시스템으로 고객 전환율 향상",
+      },
+      {
+        title: "액세서리 추천",
+        description:
+          "제품별 호환 액세서리 추천으로 추가 구매 유도",
+      },
+    ],
+  },
+  {
+    id: "6",
+    slug: "photopick",
+    title: "사진 스튜디오 예약 플랫폼",
+    description:
+      "전국 프리미엄 사진 스튜디오를 검색하고 비교 예약할 수 있는 플랫폼.",
+    thumbnail: "/images/projects/photopick/thumbnail.jpg",
+    images: [],
+    tags: ["플랫폼", "예약 시스템", "검색"],
+    techStack: ["Next.js", "TypeScript", "Zustand", "Framer Motion", "Tailwind CSS"],
+    liveUrl: "https://withstudiogroup.com/photopick",
+    featured: true,
+    order: 6,
+    overview:
+      "사진 스튜디오 예약 플랫폼입니다. 프로필, 웨딩, 가족, 증명사진 등 다양한 촬영 카테고리별로 스튜디오를 검색하고 비교 예약할 수 있습니다.",
+    role: "풀스택 개발",
+    duration: "3개월",
+    features: [
+      {
+        title: "스튜디오 검색 & 필터",
+        description:
+          "지역, 가격, 시설, 평점 등 다양한 조건으로 스튜디오 검색",
+      },
+      {
+        title: "실시간 예약",
+        description:
+          "날짜/시간 선택부터 결제까지 원스톱 예약 시스템",
+      },
+      {
+        title: "리뷰 & 평점",
+        description:
+          "실제 이용 고객의 후기로 신뢰도 높은 선택 지원",
+      },
+    ],
+  },
+  {
+    id: "7",
+    slug: "photopick-v2",
+    title: "PhotoPick V2 (풀스택)",
+    description:
+      "어드민 대시보드, 스튜디오 파트너 관리, 슈퍼어드민 기능까지 갖춘 풀스택 버전.",
+    thumbnail: "/images/projects/photopick-v2/thumbnail.jpg",
+    images: [],
+    tags: ["풀스택", "어드민", "Supabase"],
+    techStack: ["Next.js", "TypeScript", "Supabase", "Framer Motion", "Tailwind CSS"],
+    liveUrl: "https://withstudiogroup.com/photopick-v2",
+    featured: true,
+    order: 7,
+    overview:
+      "PhotoPick의 풀스택 버전입니다. Supabase 기반 인증, 스튜디오 파트너용 어드민 대시보드, 플랫폼 슈퍼어드민 패널 등 운영에 필요한 전체 기능을 구현했습니다.",
+    role: "풀스택 개발",
+    duration: "4개월",
+    features: [
+      {
+        title: "파트너 어드민",
+        description:
+          "예약 관리, 상품 관리, 리뷰 관리, 통계 대시보드",
+      },
+      {
+        title: "슈퍼어드민",
+        description:
+          "배너 관리, 카테고리 관리, 전체 플랫폼 운영 기능",
+      },
+      {
+        title: "Supabase 연동",
+        description:
+          "인증, 데이터베이스, 스토리지 등 백엔드 인프라 통합",
       },
     ],
   },
