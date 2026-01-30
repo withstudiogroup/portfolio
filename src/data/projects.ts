@@ -75,7 +75,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["포트폴리오", "예약"],
     techStack: ["Next.js", "TypeScript", "Framer Motion", "Swiper", "Tailwind CSS"],
-    liveUrl: "https://withstudiogroup.com/studio",
+    liveUrl: "https://studio.withstudiogroup.com",
     featured: true,
     order: 2,
     overview:
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["예약 시스템", "결제"],
     techStack: ["Next.js", "TypeScript", "Zustand", "Framer Motion", "Tailwind CSS"],
-    liveUrl: "https://withstudiogroup.com/hotel",
+    liveUrl: "https://hotel.withstudiogroup.com",
     featured: true,
     order: 3,
     overview:
@@ -145,7 +145,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["브랜딩", "애니메이션"],
     techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
-    liveUrl: "https://withstudiogroup.com/resort",
+    liveUrl: "https://resort.withstudiogroup.com",
     featured: true,
     order: 4,
     overview:
@@ -180,7 +180,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["이커머스", "제품 쇼케이스"],
     techStack: ["Next.js", "TypeScript", "Zustand", "Framer Motion", "Tailwind CSS"],
-    liveUrl: "https://withstudiogroup.com/shop",
+    liveUrl: "https://shop.withstudiogroup.com",
     featured: true,
     order: 5,
     overview:
@@ -215,7 +215,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["플랫폼", "예약 시스템", "검색"],
     techStack: ["Next.js", "TypeScript", "Zustand", "Framer Motion", "Tailwind CSS"],
-    liveUrl: "https://withstudiogroup.com/photopick",
+    liveUrl: "https://photopick.withstudiogroup.com",
     featured: true,
     order: 6,
     overview:
@@ -250,7 +250,7 @@ export const projects: Project[] = [
     images: [],
     tags: ["풀스택", "어드민", "Supabase"],
     techStack: ["Next.js", "TypeScript", "Supabase", "Framer Motion", "Tailwind CSS"],
-    liveUrl: "https://withstudiogroup.com/photopick-v2",
+    liveUrl: "https://photopick-v2.withstudiogroup.com",
     featured: true,
     order: 7,
     overview:
