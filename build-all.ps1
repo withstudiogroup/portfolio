@@ -21,7 +21,7 @@ $PROJECTS = @{
     "studio" = "$BASE_DIR\studio-site"
     "shop" = "$BASE_DIR\shop-site"
     "photopick" = "$BASE_DIR\photopick"
-    "photopick-v2" = "$BASE_DIR\photopick-v2\photopick"
+    # photopick-v2는 별도 Cloudflare Pages 프로젝트로 배포
 }
 
 foreach ($PROJECT_NAME in $PROJECTS.Keys) {
@@ -56,4 +56,6 @@ Write-Host "  /hotel     - 호텔 예약" -ForegroundColor Gray
 Write-Host "  /resort    - 리조트" -ForegroundColor Gray
 Write-Host "  /shop      - 전자제품 쇼핑몰" -ForegroundColor Gray
 Write-Host "  /photopick - 스튜디오 예약 플랫폼" -ForegroundColor Gray
-Write-Host "  /photopick-v2 - PhotoPick 풀스택" -ForegroundColor Gray
+Write-Host ""
+Write-Host "별도 배포:" -ForegroundColor White
+Write-Host "  photopick-v2.withstudiogroup.com - PhotoPick 풀스택 (별도 Cloudflare Pages)" -ForegroundColor Gray

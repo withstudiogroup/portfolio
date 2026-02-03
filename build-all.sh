@@ -23,7 +23,7 @@ declare -A PROJECTS=(
   ["studio-site"]="$BASE_DIR/studio-site"
   ["shop-site"]="$BASE_DIR/shop-site"
   ["photopick"]="$BASE_DIR/photopick"
-  ["photopick-v2"]="$BASE_DIR/photopick-v2/photopick"
+  # photopick-v2는 별도 Cloudflare Pages 프로젝트로 배포
 )
 
 for PROJECT_NAME in "${!PROJECTS[@]}"; do

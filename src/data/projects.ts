@@ -243,9 +243,9 @@ export const projects: Project[] = [
   {
     id: "7",
     slug: "photopick-v2",
-    title: "PhotoPick V2 (풀스택)",
+    title: "PhotoPick v2",
     description:
-      "어드민 대시보드, 스튜디오 파트너 관리, 슈퍼어드민 기능까지 갖춘 풀스택 버전.",
+      "Supabase 기반 인증, 파트너 어드민 대시보드, 슈퍼어드민 패널을 갖춘 풀스택 플랫폼.",
     thumbnail: "/images/projects/photopick-v2/thumbnail.jpg",
     images: [],
     tags: ["풀스택", "어드민", "Supabase"],
