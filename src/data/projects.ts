@@ -275,6 +275,46 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    id: "8",
+    slug: "manage-app",
+    title: "출퇴근 관리 시스템",
+    description:
+      "식당 알바생 출퇴근 기록과 급여 자동 계산을 위한 관리 시스템.",
+    thumbnail: "/images/projects/manage-app/thumbnail.jpg",
+    images: [],
+    tags: ["관리 시스템", "급여 계산", "실서비스"],
+    techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "NextAuth", "Tailwind CSS"],
+    githubUrl: "https://github.com/withstudiogroup/manage-app",
+    featured: true,
+    order: 8,
+    overview:
+      "식당에서 알바생들의 출퇴근 시간을 기록하고 급여를 자동으로 계산하는 관리 시스템입니다. 태블릿으로 간편하게 출퇴근 체크, 휴게시간 관리, 야간/주말/연장근무 수당 자동 계산, 급여명세서 생성 등의 기능을 제공합니다.",
+    role: "풀스택 개발",
+    duration: "1개월",
+    features: [
+      {
+        title: "출퇴근 체크",
+        description:
+          "태블릿에서 간편하게 출근/퇴근 버튼으로 시간 기록, 휴게시간 관리",
+      },
+      {
+        title: "급여 자동 계산",
+        description:
+          "시급제/월급제 지원, 야간/주말/연장근무 수당 자동 계산, 주휴수당 적용",
+      },
+      {
+        title: "관리자 대시보드",
+        description:
+          "실시간 출근 현황, 직원 관리, 근무 기록 조회, 급여 정산 및 명세서 생성",
+      },
+    ],
+    results: [
+      "수기 계산 오류 제거",
+      "급여 정산 시간 90% 단축",
+      "직원별 맞춤 수당 설정",
+    ],
+  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
