@@ -315,6 +315,46 @@ export const projects: Project[] = [
       "직원별 맞춤 수당 설정",
     ],
   },
+  {
+    id: "9",
+    slug: "family-english",
+    title: "FamilyEnglish",
+    description:
+      "AI 영어 선생님과 함께하는 가족 맞춤 영어 학습 플랫폼.",
+    thumbnail: "/images/projects/family-english/thumbnail.jpg",
+    images: [],
+    tags: ["AI", "교육", "OpenAI"],
+    techStack: ["Next.js", "TypeScript", "Supabase", "OpenAI", "Tailwind CSS"],
+    githubUrl: "https://github.com/withstudiogroup/family-english",
+    featured: true,
+    order: 9,
+    overview:
+      "가족 4명이 함께 사용하는 AI 기반 영어 학습 플랫폼입니다. OpenAI를 활용한 실시간 영어 대화, 레벨별 맞춤 학습, 다양한 상황별 시나리오 연습 기능을 제공합니다.",
+    role: "풀스택 개발",
+    duration: "1개월",
+    features: [
+      {
+        title: "AI 영어 대화",
+        description:
+          "OpenAI 기반 실시간 영어 대화로 자연스러운 회화 연습",
+      },
+      {
+        title: "레벨별 맞춤 학습",
+        description:
+          "가족 구성원별 영어 수준에 맞는 개인화된 학습 콘텐츠",
+      },
+      {
+        title: "상황별 시나리오",
+        description:
+          "일상, 여행, 비즈니스 등 다양한 상황별 영어 회화 연습",
+      },
+    ],
+    results: [
+      "가족 4명 동시 학습 지원",
+      "AI 기반 실시간 피드백",
+      "개인별 학습 진도 관리",
+    ],
+  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
