@@ -243,7 +243,7 @@ export const projects: Project[] = [
   {
     id: "7",
     slug: "photopick-v2",
-    title: "PhotoPick v2",
+    title: "사진 스튜디오 예약 플랫폼 v2",
     description:
       "Supabase 기반 인증, 파트너 어드민 대시보드, 슈퍼어드민 패널을 갖춘 풀스택 플랫폼.",
     thumbnail: "/images/projects/photopick-v2/thumbnail.jpg",
@@ -318,7 +318,7 @@ export const projects: Project[] = [
   {
     id: "9",
     slug: "family-english",
-    title: "FamilyEnglish",
+    title: "영어 회화 교육 플랫폼",
     description:
       "AI 영어 선생님과 함께하는 가족 맞춤 영어 학습 플랫폼.",
     thumbnail: "/images/projects/family-english/thumbnail.jpg",
